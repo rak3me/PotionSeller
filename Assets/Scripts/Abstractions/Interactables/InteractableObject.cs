@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class InteractableObject : MonoBehaviour {
 
+	public virtual void Interact () {
+
+	}
+
+}
+
+
+	/*
 	private Collider[] cols;
 	//public Vector3 dir;
 
@@ -37,3 +45,4 @@ public class InteractableObject : MonoBehaviour {
 
 	}
 }
+*/
