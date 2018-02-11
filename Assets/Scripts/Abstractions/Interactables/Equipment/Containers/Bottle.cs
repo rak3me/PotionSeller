@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item : MonoBehaviour {
+public class Bottle : Container {
 
 	// Use this for initialization
 	void Start () {
