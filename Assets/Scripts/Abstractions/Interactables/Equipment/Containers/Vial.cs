@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Customer : MonoBehaviour {
+public class Vial : Container {
 
 	// Use this for initialization
 	void Start () {
