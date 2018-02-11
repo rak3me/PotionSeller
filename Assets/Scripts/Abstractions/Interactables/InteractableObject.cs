@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class InteractableObject : MonoBehaviour {
 
-	public virtual void Interact () {
+	public virtual void Interact (InteractableObject other) {
+		//print (this.GetType ().ToString () + " is interacting with " + other.GetType ().ToString ());
+		print (gameObject.name + " is interacting with " + other.gameObject.name);
+	}
+
+	public virtual void ChangeState (int state) {
 
 	}
 

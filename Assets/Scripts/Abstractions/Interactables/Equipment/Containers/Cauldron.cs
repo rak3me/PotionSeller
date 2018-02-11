@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Cauldron : Container {
 
-	public override void Interact (GameObject other) {
+	public override void Interact (InteractableObject other) {
 		
 	}
 }
