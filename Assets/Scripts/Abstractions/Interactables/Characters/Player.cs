@@ -35,7 +35,9 @@ public class Player : Character {
 			} else if (environColliders.Length > 0) {
 				print ("Doing environment shit");
 				InteractableObject other = environColliders [0].GetComponent<InteractableObject> ();
+				print (environColliders[0].name);
 				if (other) {
+					print ("It is interactable");
 					Interact (other);
 				}
 			}
@@ -66,12 +68,14 @@ public class Player : Character {
 		currentItem = other;
 		currentItem.SetPositionAndRotation (carryPoint.position, carryPoint.rotation);
 		currentItem.SetParent (carryPoint);
+		currentItem.gameObject.layer = gameObject.layer;
 	}
 
 	public void SwapItem (Transform other) {
 		//print ("Swapping item!");
 		currentItem.parent = null;
 		currentItem.SetPositionAndRotation (other.position, other.rotation);
+		currentItem.gameObject.layer = pickupLayer;
 		PickupItem (other);
 	}
 
