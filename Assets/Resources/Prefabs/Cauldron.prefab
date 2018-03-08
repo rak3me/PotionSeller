@@ -1,0 +1,148 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1063052299712854}
+  m_IsPrefabParent: 1
+--- !u!1 &1063052299712854
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4073750888234492}
+  - component: {fileID: 33721135645241712}
+  - component: {fileID: 23587770166378940}
+  - component: {fileID: 65587312290985168}
+  - component: {fileID: 114500180470089344}
+  - component: {fileID: 114094212143714540}
+  m_Layer: 0
+  m_Name: Cauldron
+  m_TagString: Container
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4073750888234492
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1063052299712854}
+  m_LocalRotation: {x: -0.7071068, y: 0.000000057601163, z: 0.000000057601163, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 4}
+  m_LocalScale: {x: 50, y: 50, z: 50}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &23587770166378940
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1063052299712854}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: c0a0fa9166fe147f1ac5e27c33556cf6, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &33721135645241712
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1063052299712854}
+  m_Mesh: {fileID: 4300000, guid: 1e49d5340527e444db094f4cdbae476e, type: 3}
+--- !u!65 &65587312290985168
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1063052299712854}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.015899591, y: 0.015899595, z: 0.013414018}
+  m_Center: {x: 0, y: 0, z: 0.0066070203}
+--- !u!114 &114094212143714540
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1063052299712854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 115b76fe6434f432993a90235cd04e1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recipes:
+  - name: Health Potion
+    steps:
+    - ingredient: {fileID: 1539699033439650, guid: b412748ae761746f5874a696902982b1,
+        type: 2}
+      duration: 1
+    - ingredient: {fileID: 1539699033439650, guid: b412748ae761746f5874a696902982b1,
+        type: 2}
+      duration: 6.6
+  - name: Vitality Potion
+    steps:
+    - ingredient: {fileID: 1539699033439650, guid: b412748ae761746f5874a696902982b1,
+        type: 2}
+      duration: 7
+    - ingredient: {fileID: 1000757359539516, guid: c66dc40682a454cb6a61cbb2403fab66,
+        type: 2}
+      duration: 7
+  - name: Flatulence Potion
+    steps:
+    - ingredient: {fileID: 1000757359539516, guid: c66dc40682a454cb6a61cbb2403fab66,
+        type: 2}
+      duration: 7
+    - ingredient: {fileID: 1539699033439650, guid: b412748ae761746f5874a696902982b1,
+        type: 2}
+      duration: 7
+--- !u!114 &114500180470089344
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1063052299712854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d668345279db848f6b9ef8d5f99f4c23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  potentialRecipes: []
