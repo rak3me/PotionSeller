@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿//Purpose: Currently, tests functionality of adding and removing random items from the inventory
+//TODO: Generalize, and add more functionality beyond adding and removing random items.
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,12 +20,16 @@ public class InventoryManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.I)) {
-			GameObject myItem = ((GameObject)(ingredientList [Random.Range(0, 6)]));
+		if (Input.GetKeyDown (KeyCode.P)) {
+			print ("Add Item to Inventory");
+			GameObject myItem = ((GameObject)(ingredientList [Random.Range (0, 6)]));
 			//print (myItem);
 			AddItemToInventory (myItem);
-		} else if (Input.GetKeyDown(KeyCode.R)) {
+		} else if (Input.GetKeyDown (KeyCode.R)) {
+			print ("Remove Item from Inventory");
 			RemoveItemAtIndexFromInventory (Random.Range (0, inventorySlots.Count));
+		} else if (Input.GetKeyDown (KeyCode.I)) {
+			//ToggleInventory ();
 		}
 	}
 
@@ -30,16 +37,13 @@ public class InventoryManager : MonoBehaviour {
 		bool slotFound = false;
 		int index = 0;
 		foreach (Transform slot in inventorySlots) {
-			InventorySlot currentSlot = slot.GetComponent<InventorySlot> ();
+			if (slot.childCount == 0) {
+				Transform instance = Instantiate (i, Vector3.zero, Quaternion.identity).transform;
+				instance.SetParent (slot);
+				instance.localPosition = Vector3.zero;
 
-			if (currentSlot) {
-				if (currentSlot.currentItem == null) {
-					currentSlot.SetItem (i);
-					slotFound = true;
-					print (i.name + " added to slot " + index);
-					currentSlot.PrintCurrentItemName ();
-					break;
-				}
+				slotFound = true;
+				break;
 			}
 			index++;
 		}
@@ -54,17 +58,17 @@ public class InventoryManager : MonoBehaviour {
 			print ("Error: Requested index bigger than inventory size!");
 			return;
 		}
-
-		InventorySlot currentSlot = inventorySlots[index].GetComponent<InventorySlot> ();
-		currentSlot.RemoveItem ();
+			
+		if (inventorySlots [index].childCount > 0) {
+			Destroy (inventorySlots [index].GetChild (0).gameObject);
+		}
 	}
 
 	public void RemoveLastItemFromInventory () {
 		bool slotFound = false;
 		for (int i = inventorySlots.Count - 1; i >= 0; i--) {
-			InventorySlot currentSlot = inventorySlots[i].GetComponent<InventorySlot> ();
-			if (currentSlot.currentItem) {
-				currentSlot.RemoveItem ();
+			if (inventorySlots[i].childCount > 0) {
+				Destroy (inventorySlots [i].GetChild (0).gameObject);
 				slotFound = true;
 				break;
 			}

@@ -7,6 +7,7 @@ public class Item : InteractableObject {
 
 	public string name;
 
+	//Temporary solution for displaying item names
 	void OnGUI () {
 		Vector2 pos = transform.parent.position;
 		Vector2 scale = transform.parent.localScale;

@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: 136501308503341172}
   - component: {fileID: 23574897117712942}
   - component: {fileID: 65006898221090358}
-  - component: {fileID: 114140946655887368}
   m_Layer: 9
   m_Name: ZRed Fern
   m_TagString: Pickup
@@ -97,18 +96,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000001, y: 2.0000005, z: 1.0000005}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114140946655887368
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000757359539516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ef4298c8f1e34da08d1478891ddf804, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: Red Fern
 --- !u!136 &136501308503341172
 CapsuleCollider:
   m_ObjectHideFlags: 1
